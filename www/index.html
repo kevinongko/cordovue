@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello World</title>
+    </head>
+    <body>
+        <app></app>
+    </body>
+	<script src="cordova.js"></script>
+	<script>
+        document.addEventListener("deviceready", onDeviceReady)
+        function onDeviceReady() {
+          var request = new XMLHttpRequest()
+          request.open('GET', 'dist/build.js', true)
+          request.onload = function() {
+            eval(this.responseText)
+          }
+          request.send()
+        }
+	</script>
+</html>
