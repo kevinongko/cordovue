@@ -14,10 +14,6 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      },
-      {
         test: /\.vue$/,
         loader: 'vue'
       },
@@ -27,18 +23,9 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.json$/,
-        loader: 'json'
-      },
-      {
-        test: /\.html$/,
-        loader: 'vue-html'
-      },
-      {
-        test: /\.(png|woff|woff2|eot|ttf|jpg|gif|svg)$/,
-        loader: 'url',
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file',
         query: {
-          limit: 10000,
           name: '[name].[ext]?[hash]'
         }
       }
@@ -53,6 +40,7 @@ module.exports = {
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
+  // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
@@ -63,7 +51,6 @@ if (process.env.NODE_ENV === 'production') {
       compress: {
         warnings: false
       }
-    }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    })
   ])
 }

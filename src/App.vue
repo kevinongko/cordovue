@@ -1,26 +1,26 @@
 <template>
-  <ons-page>
-    <ons-toolbar>
-      <div class="center">Onsen UI</div>
-    </ons-toolbar>
-
-    <p style="text-align: center">
-      <ons-button
-        @click="$notification.alert(msg)"
-      >
-        Click me!
-      </ons-button>
-    </p>
-  </ons-page>
+  <div>
+    <h1>{{ msg }}</h1>
+    <p>something</p>
+    <button @click="clicked">Click</button>
+  </div>
 </template>
 
 <script>
 export default {
+
   data () {
     return {
       msg: 'Hello Vue!'
     }
+  },
+
+  methods: {
+    clicked () {
+      alert(this.msg)
+    }
   }
+
 }
 </script>
 
