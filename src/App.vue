@@ -1,8 +1,15 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
-    <p>something</p>
-    <button @click="clicked">Click</button>
+    <button @click="clicked">
+      Click to
+      <template v-if="!hide">
+        hide
+      </template>
+      <template v-else>
+        show
+      </template>
+    </button>
+    <h1 v-if="!hide">{{ msg }}</h1>
   </div>
 </template>
 
@@ -11,13 +18,14 @@ export default {
 
   data () {
     return {
-      msg: 'Hello Vue!'
+      msg: 'Hello Vue!',
+      hide: false
     }
   },
 
   methods: {
     clicked () {
-      alert(this.msg)
+      this.hide = !this.hide
     }
   }
 
