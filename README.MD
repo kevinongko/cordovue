@@ -1,13 +1,14 @@
-install Node
+Install Node
 ```
 brew install node
 ```
 
-install Cordova
+Install Cordova
 ```
 sudo npm install -g cordova
 ```
 
+Build
 ```
 cd cordovue
 cordova add platform android
