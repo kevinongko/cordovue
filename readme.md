@@ -1,6 +1,6 @@
 # Cordovue
 
-A sample project to show integration of Vue.js and Cordova.
+A sample project to show integration between [Vue.js](https://vuejs.org/) and [Cordova](https://cordova.apache.org/).
 
 ## Installation
 
